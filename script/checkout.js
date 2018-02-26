@@ -3,9 +3,9 @@ let validation = document.getElementById("validation");
 
 function addValidationMessage(input) {
     let field = input.getAttribute("id");
-    let exisitngParagraph = document.getElementById(field + "Val");
-    if(exisitngParagraph) {
-        exisitngParagraph.remove();
+    let existingParagraph = document.getElementById(field + "Val");
+    if(existingParagraph) {
+        existingParagraph.remove();
     }
     let p = document.createElement("p");
     p.setAttribute("id", field + "Val");
@@ -27,27 +27,30 @@ function validateField(input) {
         : removeValidationMessage(input);
 }
 
-button.addEventListener('click', function (event) {
-    event.preventDefault();
+function validateForm() {
     let firstName = document.getElementById("first-name");
     validateField(firstName);
 
     let lastName = document.getElementById("last-name");
-    validateField(lastName)
+    validateField(lastName);
 
     let email = document.getElementById("email");
-    validateField(email)
+    validateField(email);
 
     let phoneNumber = document.getElementById("phone-number");
-    validateField(phoneNumber)
+    validateField(phoneNumber);
 
     let streetAddress = document.getElementById("street-address");
-    validateField(streetAddress)
+    validateField(streetAddress);
 
     let zipCode = document.getElementById("zip-code");
-    validateField(zipCode)
+    validateField(zipCode);
 
     let city = document.getElementById("city");
-    validateField(city)
+    validateField(city);
+}
 
+button.addEventListener('click', function (event) {
+    event.preventDefault();
+    validateForm(form);
 });
