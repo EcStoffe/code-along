@@ -3,12 +3,13 @@ let validation = document.getElementById("validation");
 
 function addValidationMessage(input) {
     let field = input.getAttribute("id");
+    let exisitngParagraph = document.getElementById(field + "Val");
+    if(exisitngParagraph) {
+        exisitngParagraph.remove();
+    }
     let p = document.createElement("p");
     p.setAttribute("id", field + "Val");
     p.innerHTML = field + " is a required field ";
-    if(p) {
-        p.remove();
-    }
     validation.appendChild(p);
 }
 
@@ -48,5 +49,5 @@ button.addEventListener('click', function (event) {
 
     let city = document.getElementById("city");
     validateField(city)
-    
+
 });
