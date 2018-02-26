@@ -18,50 +18,35 @@ function removeValidationMessage(input) {
     if(p) {
         p.remove();
     }
+}
 
+function validateField(input) {
+    input.value === ""
+        ? addValidationMessage(input)
+        : removeValidationMessage(input);
 }
 
 button.addEventListener('click', function (event) {
     event.preventDefault();
     let firstName = document.getElementById("first-name");
-
-    firstName.value === ""
-        ? addValidationMessage(firstName)
-        : removeValidationMessage(firstName);
+    validateField(firstName);
 
     let lastName = document.getElementById("last-name");
-
-    lastName.value === ""
-        ? addValidationMessage(lastName)
-        : removeValidationMessage(lastName);
+    validateField(lastName)
 
     let email = document.getElementById("email");
-
-    email.value === ""
-        ? addValidationMessage(email)
-        : removeValidationMessage(email);
+    validateField(email)
 
     let phoneNumber = document.getElementById("phone-number");
-
-    phoneNumber.value === ""
-        ? addValidationMessage(phoneNumber)
-        : removeValidationMessage(phoneNumber);
+    validateField(phoneNumber)
 
     let streetAddress = document.getElementById("street-address");
-
-    streetAddress.value === ""
-        ? addValidationMessage(streetAddress)
-        : removeValidationMessage(streetAddress);
+    validateField(streetAddress)
 
     let zipCode = document.getElementById("zip-code");
-
-    zipCode.value === ""
-        ? addValidationMessage(zipCode)
-        : removeValidationMessage(zipCode);
+    validateField(zipCode)
 
     let city = document.getElementById("city");
-
-    city.value === ""
-        ? addValidationMessage(city)
-        : removeValidationMessage();
+    validateField(city)
+    
 });
